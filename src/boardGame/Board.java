@@ -48,6 +48,21 @@ public class Board {
         piece.position = position;
     }
     
+    //Responsible for remove piece on board
+    public Piece removePiece(Position position){
+        if(!positionExists(position)){
+            throw new boardGameException("Position not on the board.");
+        }
+        if(piece(position) == null){
+            return null;
+        }
+        Piece aux = piece(position);
+        aux.position = null;
+        pieces[position.getRow()][position.getColumm()] = null;
+        return aux;
+    }
+    
+    
     //Responsible for knowing if the position exists
     private boolean positionExists(int row, int columm){
         //responsible for testing if it is inside the board.
