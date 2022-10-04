@@ -28,6 +28,12 @@ public class UI {
     public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
     public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
     
+    // Work´s just on  terminals that support ANSI escape codes.
+    public static void cleanScreen(){
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
+    
     //Responsible for reading the movement of the píece.
     public static ChessPosition readChessPosition(Scanner sc){
         try{
