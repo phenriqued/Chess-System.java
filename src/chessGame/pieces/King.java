@@ -59,7 +59,7 @@ public class King extends ChessPiece{
             mat[p.getRow()][p.getColumm()] = true;
         }
 
-        //DIAGONAL LEFT
+        //N.W
         p.SetValues(position.getRow()-1, position.getColumm()-1);
         if (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
             mat[p.getRow()][p.getColumm()] = true;
@@ -67,6 +67,7 @@ public class King extends ChessPiece{
         if (getBoard().positionExists(p) && isThereAnyEnemyPiece(p)) {
             mat[p.getRow()][p.getColumm()] = true;
         }
+        //N.E
         p.SetValues(position.getRow()+1, position.getColumm()-1);
         if (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
             mat[p.getRow()][p.getColumm()] = true;
@@ -75,7 +76,7 @@ public class King extends ChessPiece{
             mat[p.getRow()][p.getColumm()] = true;
         }
         
-        //DIAGONAL RIGTH
+        //S.W
         p.SetValues(position.getRow()-1, position.getColumm()+1);
         if (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
             mat[p.getRow()][p.getColumm()] = true;
@@ -83,6 +84,7 @@ public class King extends ChessPiece{
         if (getBoard().positionExists(p) && isThereAnyEnemyPiece(p)) {
             mat[p.getRow()][p.getColumm()] = true;
         }
+        //S.E
         p.SetValues(position.getRow()+1, position.getColumm()+1);
         if (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
             mat[p.getRow()][p.getColumm()] = true;
