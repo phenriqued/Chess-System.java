@@ -35,6 +35,11 @@ public class Program {
                 if (capturedPiece != null) {
                     captured.add(capturedPiece);
                 }
+                if(chess.getPromoted() != null){
+                    System.out.print("Enter piece for promotion (B -> Bishop /N -> Knight/R -> Rook/Q -> Queen): ");
+                    String type = sc.nextLine();
+                    chess.replacePromotedPiece(type);
+                }
 
             } catch (chessGameException | InputMismatchException e) {
                 System.out.println(e.getMessage());
@@ -44,7 +49,6 @@ public class Program {
         }
         UI.cleanScreen();
         UI.printMatch(chess, captured);
-
     }
 
 }
